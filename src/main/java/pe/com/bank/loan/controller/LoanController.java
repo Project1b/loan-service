@@ -33,5 +33,15 @@ public class LoanController {
     public Mono<LoanEntity> updateCustomer(@RequestBody LoanEntity loanEntity, @PathVariable String id) {
         return loanService.updateAccount(loanEntity, id);
     }
+    
+    @GetMapping("/getLoanByProductId/{productId}")
+    public Flux<LoanEntity> getLoanByProductId(@PathVariable String productId) {
+        return loanService.getLoanByProductId(productId);
+    }
+    
+    @GetMapping("/getLoanBycustomerId/{customerId}")
+    public Flux<LoanEntity> getLoanByCustomerId(String customerId) {
+    	 return loanService.getLoanByCustomerId(customerId);
+    }
 
 }

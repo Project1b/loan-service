@@ -40,6 +40,14 @@ public class LoanServiceImpl implements LoanService {
                     return loanRepository.save(loan);
                 });
     }
+    
+    public Flux<LoanEntity> getLoanByProductId(String productId) {
+        return loanRepository.findByProductId(productId);
+    }
+    
+    public Flux<LoanEntity> getLoanByCustomerId(String customerId) {
+        return loanRepository.findByCustomerId(customerId);
+    }
 
 
 }

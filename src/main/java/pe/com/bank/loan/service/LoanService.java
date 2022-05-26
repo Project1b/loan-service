@@ -15,4 +15,9 @@ public interface LoanService {
     public Mono<Void> deleteLoanById(String id);
 
     public Mono<LoanEntity> updateAccount(LoanEntity loanEntity, String id);
+    
+    public Flux<LoanEntity> getLoanByProductId(String productId);
+    
+    public Flux<LoanEntity> getLoanByCustomerId(String customerId);
+    
 }
